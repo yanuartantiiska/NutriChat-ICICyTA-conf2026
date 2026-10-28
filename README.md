@@ -69,14 +69,9 @@ A dataset provenance audit was conducted to examine
 consistency between the recovered multimodal dataset and
 the available frozen-record reference.
 
-All 3,490 record identifiers were matched, and the 11
-shared non-identifier columns were identical across
-the compared records, with zero mismatched cells.
+All 3,490 record identifiers were matched, and The initial recovery audit confirmed matching record identifiers and 11 shared non-identifier columns. A subsequent comprehensive comparison of the regenerated frozen dataset against the recovered dataset confirmed zero mismatches across all 39 shared non-identifier columns for the 3,490 records.
 
-However, the recovered multimodal CSV does not match
-the SHA-256 checksum recorded in the frozen manifest.
-Consequently, byte-identical recovery of the complete
-historical frozen dataset has not been established.
+The original local multimodal CSV copy did not match the SHA-256 checksum recorded in the historical frozen manifest due to serialization inconsistencies. However, independent re-execution of the preserved multimodal text generator, using the original grounding input, templates, configuration, and fixed random seed of 42, successfully regenerated a dataset whose SHA-256 checksum exactly matched the frozen manifest. A record-level comparison with the recovered dataset further confirmed matching identifiers and zero mismatches across 39 shared non-identifier columns. Therefore, byte-identical regeneration of the frozen dataset has been established under the audited conditions, while exact model-training reproducibility remains unverified.
 
 The comparison covers only the columns available in
 the frozen-record reference and does not establish
