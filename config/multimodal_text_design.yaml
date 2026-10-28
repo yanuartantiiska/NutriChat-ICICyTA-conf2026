@@ -1,0 +1,87 @@
+experiment:
+  name: "exp04_multimodal_text_design"
+  seed: 42
+  language: "Indonesian"
+
+query_types:
+  - food_suitability
+  - nutrition_concern
+  - portion_inquiry
+  - food_guidance
+
+template_families:
+
+  food_suitability:
+    - MM_FS01
+    - MM_FS02
+    - MM_FS03
+    - MM_FS04
+    - MM_FS05
+
+  nutrition_concern:
+    - MM_NC01
+    - MM_NC02
+    - MM_NC03
+    - MM_NC04
+    - MM_NC05
+
+  portion_inquiry:
+    - MM_PI01
+    - MM_PI02
+    - MM_PI03
+    - MM_PI04
+    - MM_PI05
+
+  food_guidance:
+    - MM_FG01
+    - MM_FG02
+    - MM_FG03
+    - MM_FG04
+    - MM_FG05
+
+condition_groups:
+  - hypertension
+  - dyslipidemia
+  - both
+  - neither
+
+condition_mention:
+  strategy: "mixed"
+  explicit_probability: 0.60
+
+deictic_references:
+  - "makanan ini"
+  - "hidangan ini"
+  - "makanan pada foto ini"
+  - "hidangan pada foto ini"
+  - "makanan yang saya unggah"
+  - "porsi makanan ini"
+
+prohibited_text_information:
+  - ingredient_names
+  - ingredient_count
+  - energy_kcal
+  - protein_g
+  - fat_g
+  - carbohydrate_g
+  - sodium_mg
+  - sbp
+  - dbp
+  - ldl
+  - hdl
+  - triglycerides
+  - sodium_limit_mg
+  - energy_limit_kcal
+  - recommendation_label
+
+generation:
+  one_query_per_record: true
+  preserve_visual_split: true
+  exact_duplicate_allowed: false
+  conflicting_pairing_allowed: false
+
+methodology:
+  text_type: "synthetic_deictic_query"
+  ingredient_metadata_role: "grounding_and_provenance_only"
+  clinical_profile_type: "synthetic"
+  real_patient_utterance_claim: false

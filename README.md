@@ -107,7 +107,7 @@ are not included in this lightweight source package.
 
 ## Execution Paths and Repository Structure
 
-The canonical training scripts for experiments E1–E5 are located under `experiments/`.
+The canonical training scripts are located under `experiments/`:
 
 | Experiment | Canonical training script |
 |---|---|
@@ -117,12 +117,119 @@ The canonical training scripts for experiments E1–E5 are located under `experi
 | E4 | `experiments/exp02_multimodal/train_conference2_e4_image_text_clinical.py` |
 | E5 | `experiments/exp02_multimodal/train_conference2_e5_attention_fusion.py` |
 
-These five scripts resolve the repository root using `Path(__file__).resolve().parents[2]`. This path has been verified against the repository directory structure.
+These five scripts resolve the repository root using
+`Path(__file__).resolve().parents[2]`. This path was
+verified against the published directory structure.
 
-The `scripts/` directory contains additional historical or convenience copies. The canonical training implementations are located in `experiments/`.
+The `scripts/` directory contains additional historical
+or convenience copies. Use the canonical scripts in
+`experiments/` when inspecting the training implementation.
 
-The validation and test runners use the current working directory as their default root unless a root argument is supplied. They should therefore be invoked from the repository root when using their default settings.
+Validation and test runners use the current working
+directory as the default root unless a root argument
+is supplied. Run commands from the repository root
+when using these entry points.
 
-The original datasets, image files, and trained checkpoints are not included in this lightweight repository. Full numerical reproduction requires access to these external artifacts.
+The dataset, image files, and trained checkpoints are
+not included in this lightweight repository. Training
+and evaluation commands require these external artifacts
+and are not guaranteed to execute successfully without
+the original data layout.
 
-The held-out test metrics in `results/` represent recorded experimental results. Re-running the held-out test is not necessary to inspect the reported performance.
+The held-out test results supplied in `results/` are
+historical recorded results. Re-running the held-out
+test is not required to inspect the reported metrics.
+
+## Synthetic Data Provenance and Reproducibility Audit
+
+This repository accompanies the Conference 2 manuscript,
+"Image-Based Food Nutrient Prediction: An Evaluation of Visual
+and Auxiliary Context Fusion Strategies."
+
+### Synthetic clinical profiles
+
+Clinical profiles were synthetically generated using a fixed
+random seed of 42. An independent generator execution
+reproduced all 3,490 reference profiles, with zero mismatches
+across 17 compared clinical and profile attributes.
+
+The synthetic clinical contexts do not represent observed
+patient-meal associations and must not be interpreted as
+real patient records or evidence of clinical validity.
+
+### Synthetic multimodal text
+
+The preserved multimodal text generator was independently
+executed using the original grounding input, text templates,
+design configuration, and random seed 42.
+
+The generated dataset contained 3,490 unique records and
+3,490 unique user utterances.
+
+The resulting CSV matched the SHA-256 checksum recorded
+in the historical frozen manifest:
+
+070bcdbc965b276bad97e4c70ed79d13646d1b7a77c6af7149dae40fb62c7d39
+
+A comparison against the recovered multimodal dataset
+confirmed matching record identifiers and zero mismatches
+across 39 shared non-identifier columns.
+
+### Model selection and evaluation
+
+Five configurations were evaluated:
+
+- E1: Image-only
+- E2: Image + Text
+- E3: Image + Synthetic Clinical Context
+- E4: Image + Text + Synthetic Clinical Context (Concatenation)
+- E5: Attention-based Multimodal Fusion
+
+Model selection was based exclusively on validation
+normalized mean absolute error (nMAE).
+
+E1 achieved the lowest validation nMAE (0.182347)
+and was selected according to the predefined criterion.
+
+E4 achieved the lowest held-out test nMAE (0.193453),
+which is reported descriptively and was not used
+for retrospective model selection.
+
+### Scope and limitations
+
+The synthetic data-generation procedures have been
+independently reproduced under the audited conditions.
+
+However, the complete E1-E5 training and evaluation
+pipeline has not been independently rerun.
+
+The reported model metrics are retained historical
+evaluation results. Data-generation reproducibility
+must not be interpreted as exact model-level
+reproducibility or clinical validation.
+
+The grounding dataset and model checkpoints may not
+be included in the public repository. Their absence
+limits end-to-end reproducibility from the repository alone.
+
+### Dataset attribution
+
+This research uses Nutrition5k as a source dataset:
+
+Thames, Q., et al. (2021).
+Nutrition5k: Towards Automatic Nutritional Understanding
+of Generic Food.
+Proceedings of the IEEE/CVF Conference on Computer
+Vision and Pattern Recognition (CVPR).
+
+Official dataset repository:
+https://github.com/google-research-datasets/Nutrition5k
+
+Nutrition5k is distributed under the Creative Commons
+Attribution 4.0 International (CC BY 4.0) license.
+See the official dataset repository for applicable
+license terms and attribution requirements.
+
+Synthetic clinical profiles and multimodal text
+queries were generated for computational research
+and are not part of the original Nutrition5k dataset.

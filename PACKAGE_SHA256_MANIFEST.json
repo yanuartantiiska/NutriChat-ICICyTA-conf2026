@@ -1,0 +1,388 @@
+{
+  "package": "NutriChat ICICyTA Conference 2",
+  "scope": "Code, configuration, historical results and audit evidence",
+  "model_training_rerun": false,
+  "frozen_dataset_included": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 99,
+      "sha256": "27f5ae8a15eaef81dae3f34f6dc19eb071397efa196664003585fcbb73940bf9"
+    },
+    {
+      "path": "config/conference2_e1_image.yaml",
+      "size_bytes": 1445,
+      "sha256": "e3182943c105540147cf5862c3668f3b4b447bb5f1d5d5429757cb020839b865"
+    },
+    {
+      "path": "config/conference2_e2_image_text.yaml",
+      "size_bytes": 1705,
+      "sha256": "90e1268910b067e042a170d4f8508232c7bf2597ab4aa5f321c89928b2b6b530"
+    },
+    {
+      "path": "config/conference2_e3_clinical_preprocessing.json",
+      "size_bytes": 1682,
+      "sha256": "2dc8502f17682a75d6e056b1422a7ad9fab95d5025e64f0a98f7cf5804277ad0"
+    },
+    {
+      "path": "config/conference2_e3_image_clinical.yaml",
+      "size_bytes": 1628,
+      "sha256": "38cb7f3cb9cc2dc98fe1a4313c76b00ec97223e8037a5848da34861e5e0c16ff"
+    },
+    {
+      "path": "config/conference2_e4_image_text_clinical.yaml",
+      "size_bytes": 1925,
+      "sha256": "5838498a0bd72f019983c2bb37cfbf2fca90e93c903f2311c0a6e4ca8cc36ce4"
+    },
+    {
+      "path": "config/conference2_e5_attention_fusion.yaml",
+      "size_bytes": 2066,
+      "sha256": "8bc6b2be4077e41bedf831f4fdbc20f7dc75a35e2a24dbb57b633596b5c3c693"
+    },
+    {
+      "path": "config/conference2_evaluator_freeze.json",
+      "size_bytes": 1125,
+      "sha256": "e7240791206a9ccae88a7756b3aa5d16eca19d1fb908bc7316c8ce7c9843a1c8"
+    },
+    {
+      "path": "config/conference2_pretest_freeze_manifest.json",
+      "size_bytes": 3848,
+      "sha256": "ea4b222aef7052c4308a756877c3a544e0a188d903d0c917538ebae16a18f85c"
+    },
+    {
+      "path": "config/conference2_target_stats.json",
+      "size_bytes": 602,
+      "sha256": "a9e735a385712f9472114710fc4e4ff2e0e9de6d7d4f298ed812030854680a73"
+    },
+    {
+      "path": "config/multimodal_text_design.yaml",
+      "size_bytes": 1553,
+      "sha256": "13917f54f26180ee05773d3c96edc3df57e245f092cb1b629c88f52e1ce484df"
+    },
+    {
+      "path": "experiments/conference2_evaluate_all.py",
+      "size_bytes": 5028,
+      "sha256": "439473ade14c7192c19637d773d50705c65ab64e04acfd572e0c9a91ae70b30c"
+    },
+    {
+      "path": "experiments/conference2_test_runner.py",
+      "size_bytes": 7700,
+      "sha256": "f64692d420fb4040fbd7d61195ab03e53f56032a9e1cd2f91617fe2100524ecd"
+    },
+    {
+      "path": "experiments/conference2_validation_runner.py",
+      "size_bytes": 11459,
+      "sha256": "97d183c8c936745e8c0c88cf2cabd42e17e92d694361b68a20fdaf87ed69153d"
+    },
+    {
+      "path": "experiments/exp01_vision/train_conference2_e1_image.py",
+      "size_bytes": 20650,
+      "sha256": "9d87a232b5d36e0f8465a3ba76e2517618f5d794944756596911060e5f5c64b6"
+    },
+    {
+      "path": "experiments/exp02_multimodal/train_conference2_e2_image_text.py",
+      "size_bytes": 24197,
+      "sha256": "df48757559f3f872ac2a33af9c88abd5233b770d7e83c4982b130947ba6efd0f"
+    },
+    {
+      "path": "experiments/exp02_multimodal/train_conference2_e3_image_clinical.py",
+      "size_bytes": 24007,
+      "sha256": "a4d1026ad20ade5379e67fef9ec5d179772a0133886dd46b665b0d540b083d7e"
+    },
+    {
+      "path": "experiments/exp02_multimodal/train_conference2_e4_image_text_clinical.py",
+      "size_bytes": 26990,
+      "sha256": "25b3fc79daceabd029c0752a02233087145e2ff05332271bc8db3d9c41290795"
+    },
+    {
+      "path": "experiments/exp02_multimodal/train_conference2_e5_attention_fusion.py",
+      "size_bytes": 28086,
+      "sha256": "5111ae014a9ed5dc86bceb940ccbe14844fd80043565d8ac964e234079222eaf"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 9432,
+      "sha256": "617963f75671e1605ea62a851f606f44c5f48d1e56a7e02685ef46a154103f8b"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 99,
+      "sha256": "e46ca42ed426f675afbc5e4e132fdb8910665e421ed999686e14f45aca879774"
+    },
+    {
+      "path": "results/conference2/conference2_final_test_results.json",
+      "size_bytes": 4547,
+      "sha256": "b875952cb75e8accf2b6696ce36f3d808154bce9d7bf660eb93bf08cb185e9d5"
+    },
+    {
+      "path": "results/conference2_final_test_results.json",
+      "size_bytes": 4547,
+      "sha256": "b875952cb75e8accf2b6696ce36f3d808154bce9d7bf660eb93bf08cb185e9d5"
+    },
+    {
+      "path": "results/conference2_provenance_audit.json",
+      "size_bytes": 1743,
+      "sha256": "52f6beb1c31c93430bec3c8cc6224be42494bff5cab9da78485da74b27df20b3"
+    },
+    {
+      "path": "results/conference2_provenance_audit.md",
+      "size_bytes": 858,
+      "sha256": "ad3a82a8e99b60e29d1a62bce9a4eacb4d84e28bd4d7076ff3054941fa2d26ab"
+    },
+    {
+      "path": "results/final/conference2_final_metrics_table.csv",
+      "size_bytes": 2393,
+      "sha256": "d75facccae1ab4e85f2856fe5a4c388f125dd7b20378b2d61d0f5f08c6e9b5d1"
+    },
+    {
+      "path": "results/final/conference2_final_test_results.json",
+      "size_bytes": 4547,
+      "sha256": "b875952cb75e8accf2b6696ce36f3d808154bce9d7bf660eb93bf08cb185e9d5"
+    },
+    {
+      "path": "results/reproducibility/clinical_generator_reproduction_audit.json",
+      "size_bytes": 1815,
+      "sha256": "37be4c62457d41841c939086211d699f1a587801aca206ea47c24ef6de5d2ec3"
+    },
+    {
+      "path": "results/reproducibility/text_generator_reproduction_audit.json",
+      "size_bytes": 1786,
+      "sha256": "1add1ae4daf102e3bbe6098dd630abeac4f4da3ad69b899610b17209ceae8f0b"
+    },
+    {
+      "path": "results/training/E1_image_only/config_frozen.json",
+      "size_bytes": 1753,
+      "sha256": "3e0b10d104e8e90e699ef296f090e365874f2404be4d40660e3390dec083aa80"
+    },
+    {
+      "path": "results/training/E1_image_only/run_summary.json",
+      "size_bytes": 682,
+      "sha256": "6ee2dd14899a5a742ca34ea7237aba4e72ad1b1ac4d10e6eac6ae2de9457e62f"
+    },
+    {
+      "path": "results/training/E1_image_only/target_scaler_frozen.json",
+      "size_bytes": 523,
+      "sha256": "de6f01b5c3a27c09dd34eed48a69b658020a698ae91b89d649c2443c72bf4249"
+    },
+    {
+      "path": "results/training/E1_image_only/training_history.csv",
+      "size_bytes": 10426,
+      "sha256": "73f6b4836da658daaef9ae69c307fb99f100002886226e609cfa3376b8dedfe6"
+    },
+    {
+      "path": "results/training/E2_image_text/config_frozen.json",
+      "size_bytes": 2179,
+      "sha256": "faac08236fa5787c86f09a065c03164e69de318828ee2120abf6818f14aa3fc6"
+    },
+    {
+      "path": "results/training/E2_image_text/run_summary.json",
+      "size_bytes": 682,
+      "sha256": "8ee47bfee6a317fce12db4438114faf6f58b2deed70050ace493e9da0e2f1272"
+    },
+    {
+      "path": "results/training/E2_image_text/target_scaler_frozen.json",
+      "size_bytes": 523,
+      "sha256": "de6f01b5c3a27c09dd34eed48a69b658020a698ae91b89d649c2443c72bf4249"
+    },
+    {
+      "path": "results/training/E2_image_text/training_history.csv",
+      "size_bytes": 10480,
+      "sha256": "177fbb0aca7f207d12402f4290c9c59e37d2c5aff52d1a7d18aa95725dda8129"
+    },
+    {
+      "path": "results/training/E3_image_clinical/config_frozen.json",
+      "size_bytes": 2108,
+      "sha256": "06efe1f5b083fbaaefc8993c81bc26cdb533a0787cd7bbf9f28315e93c86673e"
+    },
+    {
+      "path": "results/training/E3_image_clinical/run_summary.json",
+      "size_bytes": 690,
+      "sha256": "dd2ad45c668ce3c4870ed129f48a27ebb31fcf30035adbdb2265d8a707bd696e"
+    },
+    {
+      "path": "results/training/E3_image_clinical/target_scaler_frozen.json",
+      "size_bytes": 523,
+      "sha256": "de6f01b5c3a27c09dd34eed48a69b658020a698ae91b89d649c2443c72bf4249"
+    },
+    {
+      "path": "results/training/E3_image_clinical/training_history.csv",
+      "size_bytes": 10478,
+      "sha256": "18996880321225e98d6b7356dfea958e06a942392e598ba623b9e2634c57dd77"
+    },
+    {
+      "path": "results/training/E4_image_text_clinical/config_frozen.json",
+      "size_bytes": 2445,
+      "sha256": "d228d0a4c78bb7daf293f2c3071a95c2fd84ab689abb06f146a85eb6525c39a9"
+    },
+    {
+      "path": "results/training/E4_image_text_clinical/run_summary.json",
+      "size_bytes": 701,
+      "sha256": "159b3718d8326aae8fd68b4fb773f83a45287edf4d912bc723a235e7277556f3"
+    },
+    {
+      "path": "results/training/E4_image_text_clinical/target_scaler_frozen.json",
+      "size_bytes": 523,
+      "sha256": "de6f01b5c3a27c09dd34eed48a69b658020a698ae91b89d649c2443c72bf4249"
+    },
+    {
+      "path": "results/training/E4_image_text_clinical/training_history.csv",
+      "size_bytes": 10466,
+      "sha256": "a2632e4a7bed9211de41c4d87cc5eb9dcb727322c9bf68fd6fd751d7e8dd8365"
+    },
+    {
+      "path": "results/training/E5_attention_fusion/config_frozen.json",
+      "size_bytes": 2618,
+      "sha256": "f753c41aba5fb778f69cc90633fdc36b31ffb14f318dbeeebe30bf2ca02c642d"
+    },
+    {
+      "path": "results/training/E5_attention_fusion/e5_final_checkpoint_audit.json",
+      "size_bytes": 437,
+      "sha256": "bd63c210058475f369c049d5627fe232ad0f7053799c31e8310bf20876e5ba52"
+    },
+    {
+      "path": "results/training/E5_attention_fusion/run_summary.json",
+      "size_bytes": 694,
+      "sha256": "cb235da115e980032b26022c195dc6b52dc43345f2acc6c5309b7b4501502690"
+    },
+    {
+      "path": "results/training/E5_attention_fusion/target_scaler_frozen.json",
+      "size_bytes": 523,
+      "sha256": "de6f01b5c3a27c09dd34eed48a69b658020a698ae91b89d649c2443c72bf4249"
+    },
+    {
+      "path": "results/training/E5_attention_fusion/training_history.csv",
+      "size_bytes": 10452,
+      "sha256": "690d3f4c40139d210f7701c90bddbcab5150ae2d89eec86573c2e35fbaaa6399"
+    },
+    {
+      "path": "scripts/05_make_clinical_profiles.py",
+      "size_bytes": 9748,
+      "sha256": "bae65bdfcca2b4f6f5ce21bfea0f28bd44fbe491f9ba2bf0e72021317ddebfb3"
+    },
+    {
+      "path": "scripts/audit_clinical_features.py",
+      "size_bytes": 5367,
+      "sha256": "068d8fce0639d34f82dc04decbf800199f2f549947e2a00f18c2af6b6276fb9e"
+    },
+    {
+      "path": "scripts/build_clinical_preprocessor.py",
+      "size_bytes": 4957,
+      "sha256": "9f99217f15684319fe3c1304d4b65bbdaeebc00159f9952af34ff3d58695f92e"
+    },
+    {
+      "path": "scripts/conference2_evaluate_all.py",
+      "size_bytes": 5028,
+      "sha256": "439473ade14c7192c19637d773d50705c65ab64e04acfd572e0c9a91ae70b30c"
+    },
+    {
+      "path": "scripts/conference2_image_clinical_dataset.py",
+      "size_bytes": 13050,
+      "sha256": "7f31f2304175008a6ecf2b7d035891b505cbbaaa5c9b58227c40e95291b86de2"
+    },
+    {
+      "path": "scripts/conference2_image_text_clinical_dataset.py",
+      "size_bytes": 4010,
+      "sha256": "ba37d149f80e947cb34ac2a1525041f3fc7f9ccbe3094a5eb18312eb8da5d34a"
+    },
+    {
+      "path": "scripts/conference2_image_text_dataset.py",
+      "size_bytes": 6797,
+      "sha256": "c7c198ec988bd782247d3904f3822a6fdfd885136f8cb25f706ee25ebf95c7bf"
+    },
+    {
+      "path": "scripts/conference2_test_runner.py",
+      "size_bytes": 7700,
+      "sha256": "f64692d420fb4040fbd7d61195ab03e53f56032a9e1cd2f91617fe2100524ecd"
+    },
+    {
+      "path": "scripts/conference2_validation_runner.py",
+      "size_bytes": 11459,
+      "sha256": "97d183c8c936745e8c0c88cf2cabd42e17e92d694361b68a20fdaf87ed69153d"
+    },
+    {
+      "path": "scripts/train_conference2_e1_image.py",
+      "size_bytes": 20650,
+      "sha256": "9d87a232b5d36e0f8465a3ba76e2517618f5d794944756596911060e5f5c64b6"
+    },
+    {
+      "path": "scripts/train_conference2_e2_image_text.py",
+      "size_bytes": 24197,
+      "sha256": "df48757559f3f872ac2a33af9c88abd5233b770d7e83c4982b130947ba6efd0f"
+    },
+    {
+      "path": "scripts/train_conference2_e3_image_clinical.py",
+      "size_bytes": 24007,
+      "sha256": "a4d1026ad20ade5379e67fef9ec5d179772a0133886dd46b665b0d540b083d7e"
+    },
+    {
+      "path": "scripts/train_conference2_e4_image_text_clinical.py",
+      "size_bytes": 26990,
+      "sha256": "25b3fc79daceabd029c0752a02233087145e2ff05332271bc8db3d9c41290795"
+    },
+    {
+      "path": "scripts/train_conference2_e5_attention_fusion.py",
+      "size_bytes": 28086,
+      "sha256": "5111ae014a9ed5dc86bceb940ccbe14844fd80043565d8ac964e234079222eaf"
+    },
+    {
+      "path": "src/dataset/conference2_image_clinical_dataset.py",
+      "size_bytes": 13050,
+      "sha256": "7f31f2304175008a6ecf2b7d035891b505cbbaaa5c9b58227c40e95291b86de2"
+    },
+    {
+      "path": "src/dataset/conference2_image_text_clinical_dataset.py",
+      "size_bytes": 4010,
+      "sha256": "ba37d149f80e947cb34ac2a1525041f3fc7f9ccbe3094a5eb18312eb8da5d34a"
+    },
+    {
+      "path": "src/dataset/conference2_image_text_dataset.py",
+      "size_bytes": 6797,
+      "sha256": "c7c198ec988bd782247d3904f3822a6fdfd885136f8cb25f706ee25ebf95c7bf"
+    },
+    {
+      "path": "src/dataset/generate_multimodal_queries.py",
+      "size_bytes": 10576,
+      "sha256": "a3bac2fb159738ca1865ab99fe1e1fd98c3b34e4b518243e41d57ce2eed56dff"
+    },
+    {
+      "path": "src/dataset/multimodal_text_templates.py",
+      "size_bytes": 9172,
+      "sha256": "27d3cccfecf061bc539d0f51dd383debc8797d2907f54672d91d50acf8d061b8"
+    },
+    {
+      "path": "src/evaluation/target_scaler.py",
+      "size_bytes": 1505,
+      "sha256": "58b7a196ff270b1c5cc762cb88ee4ef3ebb03d2308fef0554ed05de96319fb25"
+    },
+    {
+      "path": "src/multimodal/conference2_attention_fusion_regressor.py",
+      "size_bytes": 4575,
+      "sha256": "605c6218403a6f1c730c9d2086e4d9971545bb6d5bcaf86e4b3aa785f2c697c6"
+    },
+    {
+      "path": "src/multimodal/conference2_image_clinical_regressor.py",
+      "size_bytes": 5378,
+      "sha256": "e19345c47dfe3c147e8f19908f7e35b8cd4c68f3802bfb5b6f556688e32471dc"
+    },
+    {
+      "path": "src/multimodal/conference2_image_text_clinical_regressor.py",
+      "size_bytes": 3751,
+      "sha256": "75950b00a5907ab48d80a14627552f989e0ee00a06fdb74ceab1bf4295dfb03e"
+    },
+    {
+      "path": "src/multimodal/conference2_image_text_regressor.py",
+      "size_bytes": 4377,
+      "sha256": "e6bd5454046226ed9f651b114592ca379eef884cc558221e91c56854a6b3a6ca"
+    },
+    {
+      "path": "src/vision/vit_dataset.py",
+      "size_bytes": 1981,
+      "sha256": "2dfcb9e9494881a41d058f83637970377a2e90d370096e9845af235f5336e373"
+    },
+    {
+      "path": "src/vision/vit_regressor.py",
+      "size_bytes": 1168,
+      "sha256": "12c90307c2c14da66339e89a43f0bad6172747352e311da4c5d55d45317f1738"
+    }
+  ]
+}
