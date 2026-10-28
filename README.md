@@ -104,3 +104,25 @@ The repository documents the experiment implementation
 and available results. Full numerical reproduction
 requires the relevant datasets and checkpoints, which
 are not included in this lightweight source package.
+
+## Execution Paths and Repository Structure
+
+The canonical training scripts for experiments E1–E5 are located under `experiments/`.
+
+| Experiment | Canonical training script |
+|---|---|
+| E1 | `experiments/exp01_vision/train_conference2_e1_image.py` |
+| E2 | `experiments/exp02_multimodal/train_conference2_e2_image_text.py` |
+| E3 | `experiments/exp02_multimodal/train_conference2_e3_image_clinical.py` |
+| E4 | `experiments/exp02_multimodal/train_conference2_e4_image_text_clinical.py` |
+| E5 | `experiments/exp02_multimodal/train_conference2_e5_attention_fusion.py` |
+
+These five scripts resolve the repository root using `Path(__file__).resolve().parents[2]`. This path has been verified against the repository directory structure.
+
+The `scripts/` directory contains additional historical or convenience copies. The canonical training implementations are located in `experiments/`.
+
+The validation and test runners use the current working directory as their default root unless a root argument is supplied. They should therefore be invoked from the repository root when using their default settings.
+
+The original datasets, image files, and trained checkpoints are not included in this lightweight repository. Full numerical reproduction requires access to these external artifacts.
+
+The held-out test metrics in `results/` represent recorded experimental results. Re-running the held-out test is not necessary to inspect the reported performance.
