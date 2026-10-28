@@ -1,0 +1,88 @@
+{
+  "protocol": "CONFERENCE2_PRETEST_FREEZE_V1",
+  "created_utc": "2026-10-08T07:31:09.376211+00:00",
+  "validation_samples": 523,
+  "test_accessed": false,
+  "model_selection_metric": "validation_normalized_mae",
+  "target_names": [
+    "mass_g",
+    "energy_kcal",
+    "protein_g",
+    "fat_g",
+    "carbohydrate_g"
+  ],
+  "experiments": {
+    "E1": {
+      "config": "config\\conference2_e1_image.yaml",
+      "config_sha256": "e3182943c105540147cf5862c3668f3b4b447bb5f1d5d5429757cb020839b865",
+      "checkpoint": "models\\checkpoints\\conference2\\e1_image_only_best.pt",
+      "checkpoint_sha256": "ab16d74572d96e66f56146e24266b4f6d53deb26710376d258a914bf798bd35a",
+      "checkpoint_size_bytes": 1032227206,
+      "validation_normalized_mae": 0.1823466420173645,
+      "target_order_valid": true
+    },
+    "E2": {
+      "config": "config\\conference2_e2_image_text.yaml",
+      "config_sha256": "90e1268910b067e042a170d4f8508232c7bf2597ab4aa5f321c89928b2b6b530",
+      "checkpoint": "models\\checkpoints\\conference2\\e2_image_text_best.pt",
+      "checkpoint_sha256": "6fbe01604d82d1fb403cc9fe614212ddf04f35fc32e4c0af5147a2da93661640",
+      "checkpoint_size_bytes": 1536388864,
+      "validation_normalized_mae": 0.1881638467311859,
+      "target_order_valid": true
+    },
+    "E3": {
+      "config": "config\\conference2_e3_image_clinical.yaml",
+      "config_sha256": "38cb7f3cb9cc2dc98fe1a4313c76b00ec97223e8037a5848da34861e5e0c16ff",
+      "checkpoint": "models\\checkpoints\\conference2\\e3_image_clinical_best.pt",
+      "checkpoint_sha256": "7cdd058aa50fd1ceefe60bc429a23490ad05e82d192da0df1544fc287bf95e10",
+      "checkpoint_size_bytes": 1037021640,
+      "validation_normalized_mae": 0.1866152584552765,
+      "target_order_valid": true
+    },
+    "E4": {
+      "config": "config\\conference2_e4_image_text_clinical.yaml",
+      "config_sha256": "5838498a0bd72f019983c2bb37cfbf2fca90e93c903f2311c0a6e4ca8cc36ce4",
+      "checkpoint": "models\\checkpoints\\conference2\\e4_image_text_clinical_best.pt",
+      "checkpoint_sha256": "6faa832e4aa22e495085ba9150533578f7493221d11bd1af995b28f5570d37f5",
+      "checkpoint_size_bytes": 1538031325,
+      "validation_normalized_mae": 0.18907327950000763,
+      "target_order_valid": true
+    },
+    "E5": {
+      "config": "config\\conference2_e5_attention_fusion.yaml",
+      "config_sha256": "8bc6b2be4077e41bedf831f4fdbc20f7dc75a35e2a24dbb57b633596b5c3c693",
+      "checkpoint": "models\\checkpoints\\conference2\\e5_attention_fusion_best.pt",
+      "checkpoint_sha256": "456938b3ba93e014f49ea55ad390ad5924a393ac22c4e0294c073656cc1d5b24",
+      "checkpoint_size_bytes": 1539627358,
+      "validation_normalized_mae": 0.1955752968788147,
+      "target_order_valid": true
+    }
+  },
+  "shared_artifacts": {
+    "target_scaler": {
+      "path": "config/conference2_target_stats.json",
+      "sha256": "a9e735a385712f9472114710fc4e4ff2e0e9de6d7d4f298ed812030854680a73",
+      "size_bytes": 602
+    },
+    "clinical_preprocessing": {
+      "path": "config/conference2_e3_clinical_preprocessing.json",
+      "sha256": "2dc8502f17682a75d6e056b1422a7ad9fab95d5025e64f0a98f7cf5804277ad0",
+      "size_bytes": 1682
+    },
+    "validation_split": {
+      "path": "data/processed/val.csv",
+      "sha256": "7a0d47ac59daead9450dab7a5aaf9b36e3e9f48ec2ac2ab022621dd52b33fbf9",
+      "size_bytes": 204109
+    },
+    "multimodal_data": {
+      "path": "data/processed/multimodal_dataset_v2.csv",
+      "sha256": "070bcdbc965b276bad97e4c70ed79d13646d1b7a77c6af7149dae40fb62c7d39",
+      "size_bytes": 2484263
+    },
+    "clinical_data": {
+      "path": "data/processed/clinical_profiles.csv",
+      "sha256": "8faf0c73e45afb03d9950fad0e140e292784fc4d6771933767047a1d45198fd9",
+      "size_bytes": 367067
+    }
+  }
+}

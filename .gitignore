@@ -1,0 +1,10 @@
+*.pt
+*.pth
+*.ckpt
+__pycache__/
+.venv/
+.env
+.ipynb_checkpoints/
+data/
+models/checkpoints/
+*.csv.bak

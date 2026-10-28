@@ -1,0 +1,76 @@
+﻿experiment:
+  name: "conference2_e2_image_text"
+  protocol: "conference2_frozen_v1"
+  seed: 42
+  description: "Image+text concatenation model for frozen Conference-2 multimodal fusion study"
+
+image_encoder:
+  name: "google/vit-base-patch16-224"
+  architecture: "ViT-Base/16"
+  image_size: 224
+  hidden_size: 768
+  trainable: true
+
+text_encoder:
+  name: "indobenchmark/indobert-base-p1"
+  pooling: "cls"
+  hidden_size: 768
+  max_length: 48
+  trainable: false
+
+fusion:
+  type: "concatenation"
+  image_projection: 256
+  text_projection: 256
+  fused_dim: 512
+  regression_hidden: 256
+  dropout: 0.2
+
+targets:
+  names:
+    - "mass_g"
+    - "energy_kcal"
+    - "protein_g"
+    - "fat_g"
+    - "carbohydrate_g"
+  scaler: "config/conference2_target_stats.json"
+  normalization: "zscore_train_only"
+
+data:
+  multimodal_csv: "data/processed/multimodal_dataset_v2.csv"
+  train_csv: "data/processed/train.csv"
+  val_csv: "data/processed/val.csv"
+  test_csv: "data/processed/test.csv"
+  text_column: "user_utterance"
+
+training:
+  batch_size: 8
+  num_workers: 0
+  epochs: 30
+  optimizer: "AdamW"
+  learning_rate: 0.00001
+  weight_decay: 0.0001
+  loss: "SmoothL1"
+  mixed_precision: true
+  early_stopping:
+    enabled: true
+    patience: 5
+    monitor: "val_mae_normalized"
+    mode: "min"
+
+evaluation:
+  metrics: ["MAE", "RMSE", "R2"]
+  report_original_units: true
+  model_selection_uses_test: false
+
+checkpoint:
+  directory: "models/checkpoints/conference2"
+  filename: "e2_image_text_best.pt"
+  save_best_only: true
+
+output:
+  directory: "results/conference2/E2_image_text"
+  history: "training_history.csv"
+  predictions: "test_predictions.csv"
+  metrics: "metrics_per_target.json"
+  summary: "run_summary.json"

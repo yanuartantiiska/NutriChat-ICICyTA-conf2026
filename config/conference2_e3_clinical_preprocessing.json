@@ -1,0 +1,78 @@
+{
+  "protocol": "conference2_frozen_v1",
+  "feature_set": "E3_CLINICAL_FEATURES_V1",
+  "fit_scope": "TRAIN_ONLY",
+  "train_rows": 2443,
+  "continuous_features": [
+    "age",
+    "height_cm",
+    "weight_kg",
+    "bmi",
+    "sbp",
+    "dbp",
+    "ldl",
+    "hdl",
+    "triglycerides"
+  ],
+  "continuous_normalization": "zscore",
+  "continuous_mean": {
+    "age": 49.48424068767908,
+    "height_cm": 163.58125255832994,
+    "weight_kg": 68.86856324191568,
+    "bmi": 25.674948833401555,
+    "sbp": 121.87433483422022,
+    "dbp": 77.85632419156775,
+    "ldl": 125.20613999181333,
+    "hdl": 51.956446991404015,
+    "triglycerides": 146.58178469095375
+  },
+  "continuous_std": {
+    "age": 14.657126065466118,
+    "height_cm": 8.27730587411443,
+    "weight_kg": 13.735129039084514,
+    "bmi": 4.429989881196542,
+    "sbp": 15.438133392711338,
+    "dbp": 10.060394402857597,
+    "ldl": 34.09177037781857,
+    "hdl": 12.65146312606144,
+    "triglycerides": 53.92406109554753
+  },
+  "std_ddof": 1,
+  "binary_features": [
+    "hypertension",
+    "diabetes",
+    "dyslipidemia"
+  ],
+  "categorical_encoding": {
+    "sex": {
+      "female": 0.0,
+      "male": 1.0
+    },
+    "activity_level": {
+      "low": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "moderate": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "high": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "excluded_features": [
+    "clinical_id",
+    "sodium_limit_mg",
+    "energy_limit_kcal",
+    "profile_type"
+  ],
+  "encoded_dimension": 16,
+  "clinical_data_type": "synthetic_context",
+  "real_patient_data": false
+}

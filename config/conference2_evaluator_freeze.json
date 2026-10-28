@@ -1,0 +1,32 @@
+{
+  "protocol": "CONFERENCE2_EVALUATOR_FREEZE_V1",
+  "created_utc": "2026-10-08T07:50:45.553648+00:00",
+  "evaluation_split_completed": "validation",
+  "validation_samples": 523,
+  "held_out_test_samples": 524,
+  "test_evaluated": false,
+  "test_used_for_model_selection": false,
+  "model_selection_metric": "normalized_mae",
+  "selected_model": "E1",
+  "validation_results": {
+    "E1": 0.1823466420173645,
+    "E2": 0.1881638467311859,
+    "E3": 0.1866152584552765,
+    "E4": 0.18907327950000763,
+    "E5": 0.1955752968788147
+  },
+  "source_files": {
+    "main_evaluator": {
+      "path": "experiments\\conference2_evaluate_all.py",
+      "sha256": "439473ade14c7192c19637d773d50705c65ab64e04acfd572e0c9a91ae70b30c"
+    },
+    "validation_runner": {
+      "path": "experiments\\conference2_validation_runner.py",
+      "sha256": "97d183c8c936745e8c0c88cf2cabd42e17e92d694361b68a20fdaf87ed69153d"
+    },
+    "checkpoint_manifest": {
+      "path": "config\\conference2_pretest_freeze_manifest.json",
+      "sha256": "ea4b222aef7052c4308a756877c3a544e0a188d903d0c917538ebae16a18f85c"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "source": "train.csv",
+  "seed": 42,
+  "protocol": "conference2_frozen_v1",
+  "targets": [
+    "mass_g",
+    "energy_kcal",
+    "protein_g",
+    "fat_g",
+    "carbohydrate_g"
+  ],
+  "mean": {
+    "mass_g": 213.929595,
+    "energy_kcal": 239.046414,
+    "protein_g": 17.265197,
+    "fat_g": 11.826106,
+    "carbohydrate_g": 17.986744
+  },
+  "std": {
+    "mass_g": 163.216068,
+    "energy_kcal": 223.238055,
+    "protein_g": 20.676264,
+    "fat_g": 13.10368,
+    "carbohydrate_g": 23.140185
+  }
+}

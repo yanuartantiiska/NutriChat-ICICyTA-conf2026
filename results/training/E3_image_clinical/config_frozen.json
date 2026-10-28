@@ -1,0 +1,85 @@
+{
+  "experiment": {
+    "name": "conference2_e3_image_clinical",
+    "protocol": "conference2_frozen_v1",
+    "seed": 42
+  },
+  "image_encoder": {
+    "name": "google/vit-base-patch16-224",
+    "image_size": 224,
+    "hidden_dim": 768,
+    "trainable": true
+  },
+  "clinical_encoder": {
+    "feature_set": "E3_CLINICAL_FEATURES_V1",
+    "preprocessing": "config/conference2_e3_clinical_preprocessing.json",
+    "input_dim": 16,
+    "hidden_dim": 256,
+    "output_dim": 256,
+    "trainable": true
+  },
+  "fusion": {
+    "type": "concatenation",
+    "image_projection": 256,
+    "clinical_projection": 256,
+    "fused_dim": 512,
+    "regression_hidden": 256,
+    "dropout": 0.2
+  },
+  "targets": {
+    "names": [
+      "mass_g",
+      "energy_kcal",
+      "protein_g",
+      "fat_g",
+      "carbohydrate_g"
+    ],
+    "scaler": "config/conference2_target_stats.json",
+    "normalization": "train_only_zscore"
+  },
+  "data": {
+    "train_csv": "data/processed/train.csv",
+    "val_csv": "data/processed/val.csv",
+    "test_csv": "data/processed/test.csv",
+    "multimodal_csv": "data/processed/multimodal_dataset_v2.csv",
+    "clinical_csv": "data/processed/clinical_profiles.csv",
+    "join_key": "record_id",
+    "clinical_join_key": "clinical_id"
+  },
+  "training": {
+    "batch_size": 8,
+    "num_workers": 0,
+    "epochs": 30,
+    "optimizer": "AdamW",
+    "learning_rate": 1e-05,
+    "weight_decay": 0.0001,
+    "loss": "SmoothL1",
+    "amp": true,
+    "early_stopping": {
+      "enabled": true,
+      "patience": 5
+    }
+  },
+  "early_stopping": {
+    "enabled": true,
+    "patience": 5,
+    "monitor": "val_mae_normalized",
+    "mode": "min"
+  },
+  "evaluation": {
+    "metrics": [
+      "MAE",
+      "RMSE",
+      "R2"
+    ],
+    "report_original_units": true,
+    "model_selection_uses_test": false
+  },
+  "checkpoint": {
+    "path": "models/checkpoints/conference2/e3_image_clinical_best.pt"
+  },
+  "output": {
+    "directory": "results/conference2/E3_image_clinical",
+    "history_csv": "training_history.csv"
+  }
+}

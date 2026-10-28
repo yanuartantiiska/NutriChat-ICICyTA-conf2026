@@ -1,0 +1,53 @@
+{
+  "audit": "Conference 2 multimodal provenance",
+  "generated_at_utc": "2026-10-28T08:50:21.437666+00:00",
+  "dataset": {
+    "original": "data\\processed\\multimodal_dataset_v2.csv",
+    "recovered": "data\\processed\\multimodal_dataset_v2_RECOVERED.csv",
+    "frozen_record_reference": "results\\frozen_multimodal_records.csv",
+    "expected_frozen_sha256": "070bcdbc965b276bad97e4c70ed79d13646d1b7a77c6af7149dae40fb62c7d39",
+    "current_original_sha256": "fd57d8e7c138748285532327415ead99e59b0630c325691ff40eb39c4a3990d5",
+    "recovered_sha256": "25c57f9c4765e829ae2a92fb2cc278f5df362fce159e2431eeb66aa1df8f6cb4",
+    "frozen_hash_verified": false
+  },
+  "record_comparison": {
+    "frozen_rows": 3490,
+    "recovered_rows": 3490,
+    "matched_rows": 3490,
+    "missing_in_recovered": 0,
+    "extra_in_recovered": 0,
+    "columns_compared": [
+      "source",
+      "source_id",
+      "group_id",
+      "dish_id",
+      "image_path",
+      "clinical_id",
+      "split",
+      "user_utterance",
+      "query_type",
+      "template_family",
+      "condition_explicit"
+    ],
+    "mismatches_by_column": {
+      "source": 0,
+      "source_id": 0,
+      "group_id": 0,
+      "dish_id": 0,
+      "image_path": 0,
+      "clinical_id": 0,
+      "split": 0,
+      "user_utterance": 0,
+      "query_type": 0,
+      "template_family": 0,
+      "condition_explicit": 0
+    },
+    "total_mismatches": 0
+  },
+  "limitations": [
+    "The recovered dataset does not match the frozen SHA256.",
+    "The frozen record reference covers only a subset of columns.",
+    "Historical byte-identical dataset recovery is not established.",
+    "Synthetic clinical contexts are not real patient records."
+  ]
+}

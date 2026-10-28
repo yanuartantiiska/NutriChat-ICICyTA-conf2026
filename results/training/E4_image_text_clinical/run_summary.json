@@ -1,0 +1,22 @@
+{
+  "experiment": "conference2_e4_image_text_clinical",
+  "protocol": "conference2_frozen_v1",
+  "seed": 42,
+  "device": "cuda",
+  "targets": [
+    "mass_g",
+    "energy_kcal",
+    "protein_g",
+    "fat_g",
+    "carbohydrate_g"
+  ],
+  "loss": "SmoothL1Loss",
+  "best_epoch": 27,
+  "best_val_mae_normalized": 0.18907327950000763,
+  "train_samples": 2443,
+  "val_samples": 523,
+  "test_samples": 524,
+  "test_loader_created": false,
+  "test_used_for_model_selection": false,
+  "checkpoint": "D:\\DATA\\Doktoral\\Disertasi NutriChat\\NutriChat_Dissertation_Starter\\NutriChat_Dissertation_Starter\\NUTRICHAT_MALONG\\models\\checkpoints\\conference2\\e4_image_text_clinical_best.pt"
+}
